@@ -1,10 +1,11 @@
-import './App.css';
+
+// import { useDispatch } from 'react-redux'
+// import * as actions from './redux/actions';
 
 function App() {
+
   return (
-    <div className="App">
-      <h1>This is blog app</h1>
-    </div>
+    <h1>This is blog app</h1>
   );
 }
 
