@@ -8,6 +8,8 @@ import createSagaMiddleware from 'redux-saga'
 import mySaga from './redux/sagas';
 import reducers from './redux/reducers';
 
+import GlobalStyles from './components/GlobalStyles/GlobalStyles';
+
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(reducers, applyMiddleware(sagaMiddleware));
@@ -18,7 +20,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <GlobalStyles>
+        <App />
+      </GlobalStyles>
     </Provider>
   </React.StrictMode>
 );

@@ -1,4 +1,17 @@
-# Getting Started with Create React App
+# Xây dựng ứng dụng MERN APP - Full Stack (React+Redux, NodeJS , Express, MongoDB)
+
+## Các công nghệ được sử dụng trong dự án:
+- Frontend: REACT and REDUX-SAGA
+- Backend: NodeJS
+- Database: MongoDB
+
+**Xây dưng UI và tạo ra các API bằng NodeJS và thao tác vs database thông qua MongoDB chúng ta có thể đọc và ghi dữ liệu.**
+
+### Đây là giao diện của ứng dụng:
+
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
