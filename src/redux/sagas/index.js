@@ -1,5 +1,5 @@
 import { takeLatest, call, put } from 'redux-saga/effects'
-import { getPosts, createPost, updatePost } from '../actions'
+import { getPosts, createPost, updatePost, deletePost } from '../actions'
 import * as api from '../../api'
 
 function* fetchPostSaga(actions) {
@@ -35,10 +35,22 @@ function* updatedPostSaga(actions) {
     }
 }
 
+function* deletePostSaga(actions) {
+    try {
+        yield call(api.deletePost, actions.payload);
+        yield put(getPosts.getPostsRequest());
+        
+    } catch (error) {
+        console.log(error);
+        yield put(deletePost.deletePostFailure(error));
+    }
+}
+
 function* mySaga() {
     yield takeLatest(getPosts.getPostsRequest, fetchPostSaga)
     yield takeLatest(createPost.createPostRequest, createPostSaga)
     yield takeLatest(updatePost.updatePostRequest, updatedPostSaga)
+    yield takeLatest(deletePost.deletePostRequest, deletePostSaga)
 }
 
 export default mySaga

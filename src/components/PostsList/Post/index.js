@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { updatePost } from '../../../redux/actions'; 
+import { updatePost, deletePost } from '../../../redux/actions'; 
 import images from "../../../assets/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisVertical, faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -16,8 +16,12 @@ function Post({ post }) {
         dispatch(updatePost.updatePostRequest({ ...post, likeCount: post.likeCount + 1 }))
     }
 
+    const handleClickDeletePost = () => {
+        dispatch(deletePost.deletePostRequest({ id: post._id }))
+    }
+
     return (             
-        <div className='card col-6'>
+        <div className='card col-lg-6 col-sm-12'>
             <div className='card_header'>
                 <img src={images.noImage} alt='noImage' className='card_header-avatar'></img>
                 <div className='card_header-info'>
@@ -28,7 +32,7 @@ function Post({ post }) {
                     <FontAwesomeIcon icon={faEllipsisVertical} />
                     <div className="card_header_icon_option">
                         <ul>
-                            <li><FontAwesomeIcon className="icon-trash" icon={faTrash}/>Delete</li>
+                            <li onClick={handleClickDeletePost}><FontAwesomeIcon className="icon-trash" icon={faTrash}/>Delete</li>
                         </ul>
                     </div>
                 </div>

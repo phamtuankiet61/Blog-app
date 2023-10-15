@@ -5,10 +5,9 @@ import { postsSelector } from '../../redux/selectors';
 
 import Post from './Post';
 
-
 function PostsList() {
     const dispatch = useDispatch();
-    const postsList = useSelector(postsSelector)
+    const postsList = useSelector(postsSelector);
 
     useEffect(() => {
         dispatch(actions.getPosts.getPostsRequest())

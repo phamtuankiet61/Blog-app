@@ -27,22 +27,10 @@ html {
     margin-right: -8px;
     margin-top: 40px;
 }
-
-
-.col-4 {
-    flex: 0 0 33.33333%;
-    max-width: 33.33333%;
-}
-
-.col-6 {
+.col-lg-6 {
     flex: 0 0 48%;
     max-width: 48%;
     margin: 0 1%;
-}
-
-.col-12 {
-    flex: 0 0 100%;
-    max-width: 100%;
 }
 
 .card {
@@ -53,9 +41,7 @@ html {
 .header {
     position: fixed;
     top: 0;
-    left: 20%;
-    right: 20%;
-    /* width: 60%; */
+    width: 60%;
     height: 40px;
     display: flex;
     background-color: var(--primary-color);
@@ -324,4 +310,40 @@ input#title:focus + .label-title {
 .create_post-btn:hover {
     cursor: pointer;
     background-color: #6a5af9d8;
+}
+
+/* Responsive web */
+@media (max-width: 1150px) {
+    .container {
+        width: 80%;
+    }
+    .header {
+        width: 80%;
+    }
+    .add_post-icon {
+        right: 2%;
+        bottom: 10%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .col-sm-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .container {
+        width: 100vw;
+    }
+    .header {
+        width: 100vw;
+    }
+    .add_post-icon {
+        right: 10px;
+        bottom: 10px;
+    }
+    .modal_form {
+        width: 90%;
+        height: 50%;
+    }
 }
